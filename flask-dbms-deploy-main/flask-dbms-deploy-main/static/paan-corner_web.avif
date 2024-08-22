@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='search_style.css') }}" />
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-left">
+                <a href="{{ url_for('hello_world')}}">
+                    <img src="{{ url_for('static', filename='ChadStore_Logo.png') }}" alt="Your Screenshot" width="150" height="90">
+                </a>
+                </div>
+            <div class="header-location">
+                <div class="header-location-title">Delivery in 9 minutes</div>
+                <div class="header-location-desc">Delhi, India</div>
+            </div>
+            <div class="header-search">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>
+                <form id="searchForm" action="/search" method="GET">
+                    <input id="searchInput" type="text" name="query" value='{{word}}'>
+                </form>
+            </div>
+            <div class="header-right">
+                <a href="/logout" style="color: white; text-decoration: none;margin-left: 5px;">Logout  </a>
+            </div>
+            
+        </div>
+    </header>
+    
+        <main>
+            <section class="section-4">
+                <div class="section-header">
+                    ITEMS
+                </div>
+                <div class="product-container">
+                    {% for product in cart_items %}
+                    <div class="product-card">
+                        <img src="{{ url_for('static', filename=product[3]) }}" alt="{{ product[1] }}">
+                        <p class="product-card-title">{{ product[1] }}</p>
+                        <div class="product-action">
+                            <p class="product-qty">₹ {{ product[2] }}</p>
+                            <p class="product-qty">Quantity: {{ product[0] }}</p>
+                        </div>
+                        <a class="remove-button" href="/remove_from_cart?product_id={{ product[4] }}">Remove</a>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                    <!-- {% for product in cart_items %}
+                    <div class="product-card">
+                        <img src="{{ url_for('static', filename=product[3]) }}" alt="{{ product[1] }}">
+                        <p class="product-card-title">{{ product[1] }}</p>
+                        <div class="product-action">
+                            <p class="product-qty">₹ {{ product[2] }}</p>
+                            <p class="product-qty">Quantity: {{ product[0] }}</p>
+                        </div>
+                        <a class="remove-button" href="/remove_from_cart?product_id={{ product[4] }}">Remove</a>
+                    </div>
+                {% endfor %} -->
+
+                    <p>Total Price: ₹ {{ total_price }}</p> 
+                    <a class="remove-button" href="/add_address">Proceed</a>
+            </section>
+        </main>
+    
+        <script src="script.js"></script>
+</body>
+</html>

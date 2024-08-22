@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChadStore</title>
+    <link rel="shortcut icon" href="/static/ChadStore_Logo.png" type="image/png">
+    <link rel="stylesheet" href="/static/home_style.css" />
+    <style>
+        /* Import the Twentieth Century font */
+        @import url('https://fonts.googleapis.com/css2?family=Twentieth+Century&display=swap');
+
+        /* Apply the Twentieth Century font to the CHAD and STORE text */
+        .chadstore-text {
+          font-family: 'Twentieth Century', sans-serif;
+          /* Add any additional styling here */
+          position: relative;
+          left: -130px; /* Adjust this value as needed */
+          
+      }
+      
+
+        body {
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            background-color: black;
+            color: white;
+            font-family: 'Twentieth Century', sans-serif; /* Set font family */
+        }
+
+        .announcement-bar {
+            background-color: black;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%; /* Set width to 100% */
+            position: fixed; /* Fix the position at the top */
+            top: 0; /* Align to the top of the viewport */
+            z-index: 1000; /* Ensure the announcement bar is above other content */
+        }
+
+        .announcement-text {
+            font-weight: bold;
+            font-size: 7 px;
+            font-family: 'Twentieth Century', sans-serif; /* Set font family */
+        }
+
+        .header-container {
+            position: relative; /* Set position to relative */
+            background-color: #3551CA; /* Add background color */
+            color: white; /* Set text color */
+            height: 178.85px; /* Increase the height as needed */
+            z-index: 999; /* Ensure the header appears above the announcement bar */
+            padding-top: 70px; /* Add padding to compensate for the announcement bar */
+            box-sizing: border-box; /* Include padding in height calculation */
+            width: 100%; /* Set width to fill the available space */
+            
+        }
+
+        main {
+            margin-top: 200px; /* Adjust the value based on the height of the header and announcement bar */
+        }
+
+        .header-container .header-left,
+        .header-container .header-center,
+        .header-container .header-right {
+            width: calc(33.33% - 20px); /* Adjust the width of each element */
+            margin: 0 auto; /* Center the header container */
+            max-width: none; /* Remove the maximum width */
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .header-right a {
+            color: white;
+            text-decoration: none;
+            padding: 0 16px; /* Add padding */
+        }
+
+        .header-right svg {
+            fill: white;
+            width: 30px;
+            margin-left: 5px;
+        }
+
+        .search-icon {
+            cursor: pointer;
+            width: 30px;
+            margin-right: 10px;
+            background-color: transparent;
+        }
+
+        .header-search {
+            display: none;
+        }
+       
+        .header-center a {
+            color: #F2F0A1; /* Add this line to set the color of the links */
+            padding: 0 7.5px; /* Add padding */
+            font-size: 16px;
+            
+        }
+        
+      .announcement-text {
+        font-weight: bold;
+        font-size: 13px; /* Adjust the font size as needed */
+        letter-spacing: 1px; /* Add letter spacing */
+    }
+    .header-container {
+      position: relative;
+      background-color: #3551CA;
+      color: white;
+      height: 178.85px;
+      width: 100%%;
+      z-index: 999;
+      padding-top: 70px;
+      box-sizing: border-box;
+      margin: 0 auto; /* Center the header horizontally */
+      display: flex; /* Use flexbox for layout */
+      align-items: center; /* Center items vertically */
+      justify-content: space-between; /* Space items evenly horizontally */
+  }
+  
+  .header-left,
+  .header-center,
+  .header-right {
+      flex: 1; /* Each section takes equal space */
+      display: flex; /* Use flexbox for layout */
+      align-items: center; /* Center items vertically */
+  }
+  
+  .header-right {
+      justify-content: flex-end; /* Align items to the right */
+  }
+  
+  .logo-image {
+    max-width: 170px; /* Adjust the max-width of the logo image */
+    position: relative;
+    left: -193px;
+    bottom: 17px;
+}
+  
+  .header-center a {
+      color: #F2F0A1;
+      padding: 0 15px; /* Increase padding */
+      font-size: 16px;
+  }
+  .header-search{
+    left: 10px;
+    top: 150px;
+    border-color: black;
+  }
+  
+    
+    </style>
+</head>
+<body>
+<header>
+    <!-- Announcement -->
+    <!--div class="announcement-bar">
+        <div class="announcement-text">Free shipping ON ORDERS $100 & UP! <a href="/offer">Some exclusions apply.</a></div>
+    </div-->
+
+    <!-- Header Container -->
+    <div class="header-container">
+      <div class="header-left">
+        <img src="/static/logoaa.png" alt="Logo" class="logo-image">
+        
+    </div>
+    
+
+    
+
+        <div class="header-center">
+            <a href="/home">HOME</a>
+            <a href="/shop">SHOP</a>
+            <a href="/about">ABOUT</a>
+        </div>
+
+        <div class="header-right">
+            <!-- Search Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor" class="search-icon" style="margin-right: 15px;">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+
+            <!-- Cart Icon -->
+            <a href="/cart">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="33" height="33" stroke-width="2" stroke="currentColor" style="width: 33px; height: 33px;">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Search Box -->
+<form id="searchForm" action="/search" method="GET" class="header-search">
+    <input id="searchInput" type="text" name="query" placeholder='Search "butter"'>
+</form>
+<script>
+
+  // Get elements
+  const searchIcon = document.querySelector('.search-icon');
+  const searchBox = document.querySelector('.header-search');
+
+  // Toggle visibility of search box when search icon is clicked
+  searchIcon.addEventListener('click', () => {
+      searchBox.style.display = searchBox.style.display === 'none' ? 'block' : 'none';
+  });
+  
+</script>
+
+</body>
+
+</html>

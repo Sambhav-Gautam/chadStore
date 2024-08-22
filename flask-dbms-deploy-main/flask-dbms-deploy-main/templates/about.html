@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChadStore</title>
+    <link rel="shortcut icon" href="/static/ChadStore_Logo.png" type="image/png">
+    <link rel="stylesheet" href="/static/home_style.css" />
+    <style>
+        /* Reset default margin and padding */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif; /* Apply a default font */
+        }
+
+        /* Header styles */
+        /* Header styles */
+header {
+    height: 178px; /* Set the height of the header */
+    background-color: #3551CA;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Fix the header position */
+    width: 100%; /* Set the width to 100% */
+    top: 0; /* Align header to the top */
+    z-index: 999; /* Ensure header is above other content */
+}
+
+
+        /* Adjustments for section-1 */
+        .section-1 {
+            margin-top: -170px; /* Adjust the top margin to move the image closer to the header */
+            width: 100%;
+            box-sizing: border-box;
+            object-fit: contain;
+            pointer-events: auto;
+            transition-timing-function: ease;
+            transition-duration: 1.5s;
+            transition-property: opacity, transform, -webkit-transform;
+            opacity: 1;
+            transform: none;
+        }
+        
+        /* Adjust image styles */
+        .section-1 img {    
+            width: 100%;
+            height: auto; /* Maintains aspect ratio */
+            display: block;
+            margin: auto;
+            align: center;
+        }
+
+        /* Adjustments for section-2 */
+        .section-2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            box-sizing: border-box;
+            margin: 5% auto; /* Center the section horizontally */
+            max-width: 1200px; /* Limit the maximum width of the section */
+            overflow: hidden;
+        }
+
+        .category {
+            flex: 0 0 calc(25% - 20px); /* Set the width of each category */
+            height: 300px; /* Set the height of each category */
+            margin: 10px; /* Adjust spacing between categories */
+            border-radius: 10px; /* Add border radius for rounded corners */
+            overflow: hidden; /* Hide overflow content */
+            background-size: cover; /* Cover background image */
+            background-position: center; /* Center the background image */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .category a {
+            text-decoration: none;
+            color: white; /* Text color */
+            text-align: center;
+        }
+        .section-2 {
+            /* Other styles */
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+        
+        .section-2::-webkit-scrollbar {
+            display: none; /* Hide scrollbar in WebKit-based browsers */
+        }
+        .category-name {
+            display: block;
+            margin-top: 100px; /* Adjust this value to position the text */
+            font-size: 24px; /* Adjust font size as needed */
+            color: #F2F0A1; /* Text color */
+            text-align: center;
+            text-transform: uppercase; /* Convert text to uppercase */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow */
+        }
+        
+        .section-heading {
+            text-align: center;
+            margin-bottom: 10px; /* Adjust margin as needed */
+        }
+        
+        .heading {
+            font-size: 36px; /* Adjust font size as needed */
+            color: white;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .heading::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 10px;
+            left: 0;
+            z-index: -1;
+            background-color: black; /* Background color for the stroke */
+            border-radius: 10px; /* Adjust border radius as needed */
+            -webkit-mask-image: linear-gradient(to bottom, transparent 50%, black 50%);
+            mask-image: linear-gradient(to bottom, transparent 50%, black 50%);
+        }
+        
+        .category {
+            flex: 0 0 calc(25% - 20px); /* Set the width of each category */
+            height: 300px; /* Set the height of each category */
+            margin: 10px; /* Adjust spacing between categories */
+            border-radius: 10px; /* Add border radius for rounded corners */
+            overflow: hidden; /* Hide overflow content */
+            background-size: cover; /* Cover background image */
+            background-position: center; /* Center the background image */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid rgba(255, 255, 0, 0.5); /* Yellowish border */
+        }
+        /* Reset default margin and padding */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif; /* Apply a default font */
+}
+
+/* Header styles */
+header {
+    height: 178px; /* Set the height of the header */
+    background-color: #3551CA;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Adjustments for section-1 */
+.section-1 {
+    margin-top: -170px; /* Adjust the top margin to move the image closer to the header */
+    width: 100%;
+    box-sizing: border-box;
+    object-fit: contain;
+    pointer-events: auto;
+    transition-timing-function: ease;
+    transition-duration: 1.5s;
+    transition-property: opacity, transform, -webkit-transform;
+    opacity: 1;
+    transform: none;
+}
+
+/* Adjust image styles */
+.section-1 img {    
+    width: 100%;
+    height: auto; /* Maintains aspect ratio */
+    display: block;
+    margin: auto;
+    align: center;
+}
+
+
+
+
+/* Text style for Categories */
+.section-heading {
+    text-align: center;
+    margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.heading {
+    font-size: 36px; /* Adjust font size as needed */
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    margin-top: 20px; /* Adjust margin top */
+}
+
+.heading::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 10px;
+    left: 0;
+    z-index: -1;
+    background-color: black; /* Background color for the stroke */
+    border-radius: 10px; /* Adjust border radius as needed */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 50%, black 50%);
+    mask-image: linear-gradient(to bottom, transparent 50%, black 50%);
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Header content -->
+        {%include 'header.html'%}
+    </header>
+
+    <main>
+        <div class="section-1">
+            <img src="/static/AboutChad.png" alt="GigaChad">
+          </div>
+</main>
+
+<footer>
+  <!-- Footer content -->
+{%include 'footer.html'%}
+</footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Success</title>
+  <style>
+    body {
+        margin-top: 20px;
+        background: #eee;
+    }
+    .text-center {
+        text-align: center !important;
+    }
+    .mb-5 {
+        margin-bottom: 3rem !important;
+    }
+    .mx-auto {
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+    .text-reset {
+        --bs-text-opacity: 1;
+        color: inherit !important;
+    }
+    a {
+        color: #5465ff;
+        text-decoration: none;
+    }
+    .card {
+        box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 0 solid rgba(0, 0, 0, 0.125);
+        border-radius: 1rem;
+    }
+    .card-body {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1.5rem 1.5rem;
+    }
+    .content-container {
+        margin-top: 500px; /* Adjust the margin as needed */
+    }
+  </style>
+</head>
+<body>
+  {%include 'header.html'%}
+  <div class="container-fluid content-container">
+    <div class="container text-center">
+      <h1>Thank you.</h1>
+      <p class="lead w-lg-50 mx-auto">Your order has been placed successfully.</p>
+      <p class="w-lg-50 mx-auto">Your order number is <a href="#">9237427634826</a>. We will immediately process your order, and it will be delivered in 2 - 5 business days.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChadStore</title>
+  <link rel="shortcut icon" href="/static/ChadStore_Logo.png" type="image/png">
+  <link rel="stylesheet" href="/static/home_style.css" />
+  <style>
+    /* Container for all products */
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly; /* Adjust as needed */
+      gap: 20px; /* Add gap between products */
+    }
+
+    /* Styles for each product card */
+    .product-card {
+      width: 200px; /* Set width of each product card */
+      padding: 10px; /* Add padding to product card */
+      border: 1px solid #ccc; /* Add border to product card */
+      border-radius: 5px; /* Add border radius to product card */
+      background-color: #fff; /* Set background color of product card */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow to product card */
+    }
+
+    /* Style for product image */
+    .product-card img {
+      width: 100%; /* Make image fill its container */
+      border-radius: 5px; /* Add border radius to image */
+    }
+
+    /* Style for product title */
+    .product-card .product-card-title {
+      font-size: 16px; /* Set font size */
+      font-weight: bold; /* Set font weight */
+      margin-top: 10px; /* Add margin */
+    }
+
+    /* Style for product price */
+    .product-card .product-qty {
+      font-size: 14px; /* Set font size */
+      color: #888; /* Set text color */
+    }
+
+    /* Style for remove button */
+    .remove-button {
+      background-color: darkblue; /* Set button background color */
+      color: white; /* Set button text color */
+      border: none; /* Remove button border */
+      padding: 8px 16px; /* Add padding to button */
+      border-radius: 5px; /* Add border radius to button */
+      cursor: pointer; /* Change cursor to pointer */
+      text-decoration: none; /* Remove default link underline */
+      transition: background-color 0.3s ease-in-out; /* Add transition effect */
+    }
+
+    /* Hover effect for remove button */
+    .remove-button:hover {
+      background-color: navy; /* Change button background color on hover */
+    }
+  </style>
+</head>
+<body>
+  {%include 'header.html'%}
+  <main>
+    <section class="section-4">
+      <div class="section-header">
+        ITEMS
+      </div>
+      <div class="product-container">
+        {% for product in cart_items %}
+        <div class="product-card">
+          <img src="{{ url_for('static', filename=product[3]) }}" alt="{{ product[1] }}">
+          <p class="product-card-title">{{ product[1] }}</p>
+          <p class="product-qty">₹ {{ product[2] }}</p>
+          <p class="product-qty">Quantity: {{ product[0] }}</p>
+          <a class="remove-button" href="/remove_from_cart?product_id={{ product[4] }}">Remove</a>
+        </div>
+        {% endfor %}
+      </div>
+      <p>Total Price: ₹ {{ total_price }}</p> 
+      <a class="remove-button" href="/place_order">Proceed</a>
+    </section>
+  </main>
+  
+  <script src="script.js"></script>
+  
+</body>
+</html>

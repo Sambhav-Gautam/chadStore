@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* 
+    HEADER
+*/
+header {
+    width: 100%;
+    height: 86px;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+.header-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.header-left {
+    margin-left: 32px;
+    margin-right: 100px;
+}
+.header-location {
+    margin-right: 40px;
+}
+.header-location-title {
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+.header-location-desc {
+    font-size: 13px;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+}
+.header-search {
+    width: 832px;
+    height: 46px;
+    cursor: text;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 0px 12px;
+    border-radius: 12px;
+    background: rgb(248, 248, 248);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 70px;
+}
+.header-search svg {
+    width: 20px;
+    font-weight: 600;
+}
+.header-search input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.header-logout {
+    /* font-size: 18px;
+    font-weight: 400;
+    color: rgb(58, 230, 127);
+    margin-right: 70px;
+     */
+    width: 100px;
+    height: 52px;
+    background-color: rgb(53, 73, 227);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+.header-right {
+    margin-right: 10px;
+    width: 101px;
+    height: 52px;
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.header-right svg {
+    width: 34px;
+    margin-right: 10px;
+}
+
+/* 
+    MAIN
+*/
+main {
+    display: flex;
+    justify-content: center;
+}
+.main-container {
+    max-width: 1280px;
+}
+
+.section-2 {
+    margin: 0 16px;
+    display: flex;
+    overflow: auto scroll;
+    gap: 20px;
+    border-radius: 12px;
+}
+.section-2-img {
+    height: 195px;
+    width: 335.4px;
+    cursor: pointer;
+    display: flex;
+}
+.section-2-img img {
+    height: 100%;
+}
+.section-3 {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.section-3-img {
+    width: 128px;
+}
+.section-3-img img {
+    width: 100%;
+}
+.section-4 {
+    margin: 16px;
+}
+.section-header {
+    font-size: 24px;
+    font-weight: 500;
+}
+.section-list {
+    margin-top: 16px;
+    width: 100%;
+    display: flex;
+    overflow: auto scroll;
+    gap: 20px;
+}
+.product-card {
+    padding: 12px;
+    width: 154px;
+    border: 0.5px solid rgb(221, 221, 221);
+    border-radius: 8px;
+}
+.product-card img {
+    width: 100%;
+}
+.product-card-title {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+.product-card-desc {
+    font-size: 12px;
+    margin-bottom: 12px;
+    color: #757575;
+}
+.product-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.product-action button {
+    width: 90px;
+    height: 36px;
+    background-color: rgb(247, 255, 249);
+    border: 0.5px solid rgb(12, 131, 31);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+footer {
+    text-align: center; /* Center-align the content */
+}
+
+.footer-content {
+    display: inline-block; /* Align the content in the center */
+    border-top: 1px solid #ccc; /* Add the footer line */
+    padding-top: 10px; /* Adjust the spacing above the line */
+    width: 80%; /* Set the width of the content */
+}
+
+
+
+
+.add-to-cart-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #333;
+}
+
+.product-card {
+    /* Adjust the width to fit the content properly */
+    width: 200px;
+    /* Optional: Add margin or padding to space out the product cards */
+    margin: 10px;
+    padding: 10px;
+    /* Optional: Add a border and border-radius for better visual separation */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* Optional: Add box-shadow for a subtle 3D effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.remove-button {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.remove-from-cart-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.remove-from-cart-btn:hover {
+    background-color: #333;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust the minimum and maximum width as needed */
+    gap: 20px; /* Adjust the gap between cards */
+}
+
+.product-card {
+    background-color: #fff; /* Set background color of each card */
+    border-radius: 8px; /* Add border radius for rounded corners */
+    padding: 20px; /* Add padding around each card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+}
+
+/* Add any additional styling for product cards as needed */
+.product-card img {
+    max-width: 100%; /* Ensure images don't exceed the width of their containers */
+}
+
+.product-card-title {
+    font-size: 16px; /* Adjust font size as needed */
+    margin-top: 10px; /* Add space between image and title */
+    color: black;
+}
+
+.product-qty {
+    color: black; /* Set color of the price text */
+    font-size: 14px;
+}
+
+.remove-button {
+    margin-top: 10px; /* Add space between title and buttons */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.section-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Adjust the gap between images */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 10px; /* Add padding */
+}
+
+.section-3-img {
+    flex-shrink: 0; /* Prevent images from shrinking */
+    max-width: 100px; /* Set maximum width for each image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.section-3-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+
+/* Adjust section 1 */
+
+
+/* Adjust section 2 margin */
+.section-2 {
+    margin-top: 50px;
+}
+
+.header-container {
+    position: relative;
+    background-color: #3551CA;
+    color: white;
+    height: 450px;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between; /* Align items horizontally */
+    align-items: center; /* Center items vertically */
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 100px;
+}
+
+.header-left,
+.header-right {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.header-left img {
+    display: block;
+    height: auto;
+    max-height: 100%;
+}
+
+
+.chadstore-text {
+    font-family: 'Arial', sans-serif; /* Choose your preferred font */
+    font-size: 36px; /* Adjust font size */
+    font-weight: bold; /* Optionally, adjust font weight */
+    color: white; /* Adjust text color */
+    text-transform: uppercase; /* Convert text to uppercase */
+    letter-spacing: 2px; /* Adjust letter spacing */
+    /* Add any other custom styling as desired */
+  }
+
+
+.header-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Distribute items evenly */
+  }
+  
+.header-left {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+  }
+  
+.chadstore-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+.delivery-time {
+    color: black;
+    font-size: 15px; /* Adjust font size */
+  }
+  
+  .search-icon {
+    cursor: pointer;
+    width: 30px;
+    margin-right: 20px;
+    /* Remove the following line to remove the background color */
+    background-color: transparent; /* Set background color to transparent */
+}
+
+.search-icon svg {
+    cursor: pointer;
+    width: 30px;
+    margin-right: 20px;
+    /* Set the background color of the SVG to transparent */
+    
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-center a {
+    margin: 0 20px; /* Adjust the spacing between items */
+    font-size: 18px; /* Adjust the font size */
+    text-decoration: none;
+    color: #000; /* Adjust the color */
+}
+.header-search {
+    width: auto; /* Set width to auto to adjust based on content */
+    height: 46px;
+    cursor: text;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 0px 12px;
+    border-radius: 12px;
+    background: rgb(248, 248, 248);
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Adjust the gap between the input and the icon */
+}
+
+.header-container {
+    position: relative;
+    background-color: #3551CA;
+    color: white;
+    height: 150px; /* Adjust height as needed */
+    width: 100%;
+}
+
+.header-search {
+    position: absolute;
+    bottom: 470px;
+    width: 100%;
+    background-color: #f2f2f2; /* Adjust background color as needed */
+    padding: 5px 0; /* Adjust padding as needed */
+    box-sizing: border-box;
+}
+
+.search-icon {
+    cursor: pointer;
+    width: 30px;
+    margin-right: 10px;
+    background-color: transparent;
+}
+
+/* Additional styles for the search input */
+.header-search input[type="text"] {
+    width: 80%; /* Adjust width as needed */
+    padding: 8px;
+    margin: 0 auto;
+    display: block;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* CSS for header */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Move Chad Store to the extreme left */
+}
+
+.chadstore-text {
+    margin-right: 20px; /* Adjust margin as needed */
+}
+
+.delivery-time {
+    font-size: 14px; /* Adjust font size as needed */
+    color: black; /* Adjust color as needed */
+}
+
+.section-3-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.section-3-img {
+    margin: 10px; /* Adjust spacing between images */
+}
+
+.section-3-img img {
+    width: 150px; /* Adjust image width */
+    height: auto; /* Maintain aspect ratio */
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <style>
+    /* CSS styles go here */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background-color: #000;
+      background-image: url('https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1517&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Additional styles can be added here */
+    li{
+      list-style: none;
+    }
+    a{
+      text-decoration:none;
+      color: #fff;
+      font-size:1rem;
+
+    }
+    a:hover{
+      color:orange;
+    }
+    header{
+      position: relative;
+      padding: 0 2rem;
+    }
+    .navbar {
+      /* Your navbar styles */
+      width: 100%;
+      height: 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar .logo {
+      /* Your logo styles */
+      font-size : 1.5rem;
+      font-weight: bold;
+    }
+    
+
+    .navbar .links {
+      /* Your links styles */
+      display: flex;
+      gap: 2rem;
+    }
+    .cart_btn {
+     
+     
+    }
+    
+    .action_btn {
+      /* Your action button styles */
+      background-color: transparent;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      outline: none;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: scale 0.2 ease;
+    }
+
+    .navbar .toggle_btn {
+      /* Your toggle button styles */
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+    }
+    .action_btn:hover{
+      scale: 1.05;
+      color: #fff;
+    }
+    .action_btn:active{
+      scale: 0.95;
+      
+    }
+    section#hero{
+      height: calc(100vh - 60px);
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content:center;
+      text-align: center;
+      color: #fff;
+    }
+    #hero h1{
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <a href="#">Chad Store</a>
+      </div>
+      <ul class="links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/shop">Shop</a></li>
+        <li><a href="Contact">Contact</a></li>
+      </ul>
+      
+      <div class="header-right">
+      <a href="#" class="action_btn">Search</a>
+     
+      
+        <a href="/cart" class="action_btn">
+          Cart
+        </a>
+      
+      
+   
+      </div>
+      
+      <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section id ="hero">
+      <h1>Welcome</h1>
+      <p>Lodum Ipsum
+      </p>
+    </section>
+  </main>
+</body>
+</html>
+
+</script>
+
+</body>
+</html>

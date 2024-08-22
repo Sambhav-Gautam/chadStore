@@ -1,0 +1,286 @@
+<!--!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ChadStore</title>
+<link rel="shortcut icon" href="/static/ChadStore_Logo.png" type="image/png">
+<link rel="stylesheet" href="/static/home_style.css" />
+<style>
+    /* Reset default margin and padding */
+    /* Reset default margin and padding */
+    body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    }
+    .section-1 {
+        width: 100%;
+        margin: auto;
+    }
+    
+    
+    /* Adjustments for section-1 */
+    .section-1 {
+        margin-top: 178px; /* Set the top margin to match the header height */
+        width: 100%;
+        box-sizing: border-box;
+        background-image: url(https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=2700/layout-engine/2022-05/Group-33704.jpg);
+        object-fit: contain;
+        margin: 20px 2px 2px 0;
+        pointer-events: auto;
+        transition-timing-function: ease;
+        transition-duration: 1.5s;
+        transition-property: opacity, transform, -webkit-transform;
+        opacity: 1;
+        transform: none;
+    }
+    
+    /* Adjust image styles */
+    .section-1 img {
+        width: 100%;
+        height: auto; /* Maintains aspect ratio */
+        display: block;
+        margin: auto;
+        align: center;
+    }
+
+    
+    
+</style>
+</head>
+<body>
+    {%include 'header.html'%}
+
+
+    <main>
+        <div class="main-container">
+            <section class="section-1">
+                <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=2700/layout-engine/2022-05/Group-33704.jpg" alt="">
+            </section>
+            <section class="section-2">
+                <div class="section-2-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=720/layout-engine/2022-06/morning-banner.jpg" alt="">
+                </div>
+                <div class="section-2-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=720/layout-engine/2023-03/Pet-Care_WEB.jpg" alt="">
+                </div>
+                <div class="section-2-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=720/layout-engine/2023-03/summer_WEB.jpg" alt="">
+                </div>
+                <div class="section-2-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=720/layout-engine/2023-03/electronic-WEB-1.jpg" alt="">
+                </div>
+                <div class="section-2-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=720/layout-engine/2023-03/mango-WEB-1.png" alt="">
+                </div>
+                <div class="section-2-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=720/layout-engine/2023-03/staples-WEB.jpg" alt="">
+                </div>
+            </section>
+
+            <section class="section-3">
+                {% for product_category in products_categorys %}
+                    <div class="section-3-img">
+                            <img src="{{ url_for('static', filename=product_category[2]) }}" alt="{{ product_category[1] }}">
+                    </div>
+                {% endfor %}
+
+            
+                <div class="section-3-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/layout-engine/2022-11/Slice-5_4.png" alt="">
+                </div>
+                <div class="section-3-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/layout-engine/2022-11/Slice-6_5.png" alt="">
+                </div>
+                <div class="section-3-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/layout-engine/2022-11/Slice-7_3.png" alt="">
+                </div>
+                <div class="section-3-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/layout-engine/2022-11/Slice-8_4.png" alt="">
+                </div>
+                <div class="section-3-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/layout-engine/2022-11/Slice-9_3.png" alt="">
+                </div>
+                <div class="section-3-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/layout-engine/2022-11/Slice-10.png" alt="">
+                </div>
+                <div class="section-3-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/layout-engine/2022-11/Slice-11.png" alt="">
+                </div>
+                <div class="section-3-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/layout-engine/2022-11/Slice-12.png" alt="">
+                </div>
+                <div class="section-3-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/layout-engine/2022-11/Slice-13.png" alt="">
+                </div>
+                <div class="section-3-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/layout-engine/2022-11/Slice-14.png" alt="">
+                </div>
+                <div class="section-3-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/layout-engine/2022-11/Slice-15.png" alt="">
+                </div>
+                <div class="section-3-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/layout-engine/2022-11/Slice-16.png" alt="">
+                </div>
+                <div class="section-3-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/layout-engine/2022-11/Slice-17.png" alt="">
+                </div>
+                <div class="section-3-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/layout-engine/2022-11/Slice-18.png" alt="">
+                </div>
+                <div class="section-3-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/layout-engine/2022-11/Slice-19.png" alt="">
+                </div>
+                <div class="section-3-img">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/layout-engine/2022-11/Slice-20.png" alt="">
+                </div>
+            </section>
+            <section class="section-4">
+                <div class="section-header">
+                    Dairy, Bread & Eggs
+                </div>
+                <div class="section-list product-grid">
+                    {% for product in products %}
+                    <div class="product-card">
+                        <img src="{{ url_for('static', filename=product[3]) }}" alt="{{ product[1] }}">
+                        <p class="product-card-title">{{product[1]}}</p>
+                        <div class="remove-button">
+                            <p class="product-qty">₹ {{product[2]}}</p>
+                            <button class="add-to-cart-btn" data-product-id="{{ product[0] }}">ADD</button>
+                            {% if product[0] in cart_items_ids %}
+                            <button class="remove-from-cart-btn" data-product-id="{{ product[0] }}">Remove</button>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+            
+            
+                
+                
+                
+                
+                            <script>
+                                document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+                                button.addEventListener('click', () => {
+                                    const productId = button.dataset.productId;
+                                    addToCart(productId);
+                                });
+                            });
+            
+                            function addToCart(productId) {
+                                fetch('/add_to_cart', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({ productId: productId })
+                                })
+                                .then(response => {
+                                    if (!response.ok) {
+                                        throw new Error('Failed to add product to cart');
+                                    }
+                                    return response.text();
+                                })
+                                .then(data => {
+                                    console.log(data);
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
+                                });
+                            }
+            
+                            </script>
+
+
+                    <!-- <div class="product-card">
+                        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/app/images/products/sliding_image/86446a.jpg?ts=1641540332" alt="">
+                        <p class="product-card-title">Mother Dairy Classic</p>
+                        <p class="product-card-desc">400 g</p>
+                        <div class="product-action">
+                            <p class="product-qty">₹ 400</p>
+                        <a href="/home"> <button>ADD</button> </a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/app/images/products/sliding_image/10491a.jpg" alt="">
+                        <p class="product-card-title">Nestle Milkmaid Sweetened...</p>
+                        <p class="product-card-desc">380 g</p>
+                        <div class="product-action">
+                            <p class="product-qty">₹ 139</p>
+                            <button>ADD</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/app/images/products/sliding_image/483705a.jpg?ts=1657805510" alt="">
+                        <p class="product-card-title">Table White Egg - 30 Pieced Tray</p>
+                        <p class="product-card-desc">30 pieces</p>
+                        <div class="product-action">
+                            <p class="product-qty">₹ 196</p>
+                            <button>ADD</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/app/images/products/sliding_image/24194a.jpg?ts=1661157751" alt="">
+                        <p class="product-card-title">Harvest Gold Hearty Brown</p>
+                        <p class="product-card-desc">400 g</p>
+                        <div class="product-action">
+                            <p class="product-qty">₹ 400</p>
+                            <button>ADD</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/app/images/products/sliding_image/192a.jpg?ts=1644908944" alt="">
+                        <p class="product-card-title">Mother Dairy Paneer</p>
+                        <p class="product-card-desc">200 g</p>
+                        <div class="product-action">
+                            <p class="product-qty">₹ 90</p>
+                            <button>ADD</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/app/images/products/sliding_image/160a.jpg?ts=1654778815" alt="">
+                        <p class="product-card-title">Amul Salted Butter</p>
+                        <p class="product-card-desc">500 g</p>
+                        <div class="product-action">
+                            <p class="product-qty">₹ 275</p>
+                            <button>ADD</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/app/images/products/sliding_image/45533a.jpg?ts=1654845569" alt="">
+                        <p class="product-card-title">Amul Salted Masti Curd</p>
+                        <p class="product-card-desc">400 g</p>
+                        <div class="product-action">
+                            <p class="product-qty">₹ 43</p>
+                            <button>ADD</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/app/images/products/sliding_image/448095a.jpg?ts=1661157752" alt="">
+                        <p class="product-card-title">Harvest Gold White Bread</p>
+                        <p class="product-card-desc">400 g</p>
+                        <div class="product-action">
+                            <p class="product-qty">₹ 400</p>
+                            <button>ADD</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,metadata=none,w=270/app/images/products/sliding_image/86446a.jpg?ts=1641540332" alt="">
+                        <p class="product-card-title">Mother Dairy Classic</p>
+                        <p class="product-card-desc">400 g</p>
+                        <div class="product-action">
+                            <p class="product-qty">400 g</p>
+                            <button>ADD</button>
+                        </div>
+                    </div> >
+                </div>
+            </section>
+        </div>
+    </main>
+    {% include 'footer.html'%}
+    <script src="script.js"></script>
+</body>
+</html-->

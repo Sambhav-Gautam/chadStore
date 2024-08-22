@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChadStore</title>
+    <link rel="shortcut icon" href="/static/ChadStore_Logo.png" type="image/png">
+    <link rel="stylesheet" href="/static/home_style.css" />
+    <style>
+        /* Reset default margin and padding */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif; /* Apply a default font */
+        }
+
+        /* Header styles */
+        /* Header styles */
+header {
+    height: 178px; /* Set the height of the header */
+    background-color: #3551CA;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Fix the header position */
+    width: 100%; /* Set the width to 100% */
+    top: 0; /* Align header to the top */
+    z-index: 999; /* Ensure header is above other content */
+}
+
+
+
+        /* Adjustments for section-1 */
+        .section-1 {
+            margin-top: -170px; /* Adjust the top margin to move the image closer to the header */
+            width: 100%;
+            box-sizing: border-box;
+            object-fit: contain;
+            pointer-events: auto;
+            transition-timing-function: ease;
+            transition-duration: 1.5s;
+            transition-property: opacity, transform, -webkit-transform;
+            opacity: 1;
+            transform: none;
+        }
+        
+        /* Adjust image styles */
+        .section-1 img {    
+            width: 100%;
+            height: auto; /* Maintains aspect ratio */
+            display: block;
+            margin: auto;
+            align: center;
+        }
+
+        /* Adjustments for section-2 */
+        .section-2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            box-sizing: border-box;
+            margin: 5% auto; /* Center the section horizontally */
+            max-width: 1200px; /* Limit the maximum width of the section */
+            overflow: hidden;
+        }
+
+        .category {
+            flex: 0 0 calc(25% - 20px); /* Set the width of each category */
+            height: 300px; /* Set the height of each category */
+            margin: 10px; /* Adjust spacing between categories */
+            border-radius: 10px; /* Add border radius for rounded corners */
+            overflow: hidden; /* Hide overflow content */
+            background-size: cover; /* Cover background image */
+            background-position: center; /* Center the background image */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .category a {
+            text-decoration: none;
+            color: white; /* Text color */
+            text-align: center;
+        }
+        .section-2 {
+            /* Other styles */
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+        
+        .section-2::-webkit-scrollbar {
+            display: none; /* Hide scrollbar in WebKit-based browsers */
+        }
+        .category-name {
+            display: block;
+            margin-top: 100px; /* Adjust this value to position the text */
+            font-size: 24px; /* Adjust font size as needed */
+            color: #F2F0A1; /* Text color */
+            text-align: center;
+            text-transform: uppercase; /* Convert text to uppercase */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow */
+        }
+        
+        .section-heading {
+            text-align: center;
+            margin-bottom: 10px; /* Adjust margin as needed */
+        }
+        
+        .heading {
+            font-size: 36px; /* Adjust font size as needed */
+            color: white;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .heading::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 10px;
+            left: 0;
+            z-index: -1;
+            background-color: black; /* Background color for the stroke */
+            border-radius: 10px; /* Adjust border radius as needed */
+            -webkit-mask-image: linear-gradient(to bottom, transparent 50%, black 50%);
+            mask-image: linear-gradient(to bottom, transparent 50%, black 50%);
+        }
+        
+        .category {
+            flex: 0 0 calc(25% - 20px); /* Set the width of each category */
+            height: 300px; /* Set the height of each category */
+            margin: 10px; /* Adjust spacing between categories */
+            border-radius: 10px; /* Add border radius for rounded corners */
+            overflow: hidden; /* Hide overflow content */
+            background-size: cover; /* Cover background image */
+            background-position: center; /* Center the background image */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid rgba(255, 255, 0, 0.5); /* Yellowish border */
+        }
+        /* Reset default margin and padding */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif; /* Apply a default font */
+}
+
+/* Header styles */
+header {
+    height: 178px; /* Set the height of the header */
+    background-color: #3551CA;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Adjustments for section-1 */
+.section-1 {
+    margin-top: -170px; /* Adjust the top margin to move the image closer to the header */
+    width: 100%;
+    box-sizing: border-box;
+    object-fit: contain;
+    pointer-events: auto;
+    transition-timing-function: ease;
+    transition-duration: 1.5s;
+    transition-property: opacity, transform, -webkit-transform;
+    opacity: 1;
+    transform: none;
+}
+
+/* Adjust image styles */
+.section-1 img {    
+    width: 100%;
+    height: auto; /* Maintains aspect ratio */
+    display: block;
+    margin: auto;
+    align: center;
+}
+
+/* Adjustments for section-2 */
+.section-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 5% auto; /* Center the section horizontally */
+    max-width: 1200px; /* Limit the maximum width of the section */
+    overflow: hidden;
+    position: relative; /* Positioning for absolute children */
+}
+
+/* Hover effect on category */
+.category:hover {
+    transform: scale(1.05); /* Increase size on hover */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.category {
+    flex: 0 0 calc(25% - 20px); /* Set the width of each category */
+    height: 300px; /* Set the height of each category */
+    margin: 10px; /* Adjust spacing between categories */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    overflow: hidden; /* Hide overflow content */
+    background-size: cover; /* Cover background image */
+    background-position: center; /* Center the background image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid rgba(255, 255, 0, 0.5); /* Yellowish border */
+    position: relative; /* Positioning for absolute children */
+}
+
+.category a {
+    text-decoration: none;
+    color: white; /* Text color */
+    text-align: center;
+}
+
+/* Text style for Categories */
+.section-heading {
+    text-align: center;
+    margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.heading {
+    font-size: 36px; /* Adjust font size as needed */
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    margin-top: 20px; /* Adjust margin top */
+}
+
+.heading::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 10px;
+    left: 0;
+    z-index: -1;
+    background-color: black; /* Background color for the stroke */
+    border-radius: 10px; /* Adjust border radius as needed */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 50%, black 50%);
+    mask-image: linear-gradient(to bottom, transparent 50%, black 50%);
+}
+
+/* Animation for section 2 */
+.section-2 .category {
+    transition: transform 0.5s ease; /* Smooth transition */
+}
+
+.section-2 .category:nth-child(odd) {
+    animation: slideInRight 1s ease forwards; /* Animation for odd elements */
+}
+
+.section-2 .category:nth-child(even) {
+    animation: slideInLeft 1s ease forwards; /* Animation for even elements */
+}
+
+.section-4 {
+    max-width: 1200px; /* Set maximum width */
+    margin: 0 auto; /* Center the section */
+}
+
+.product-container {
+    display: flex; /* Use flexbox */
+    flex-wrap: wrap; /* Allow wrapping of items */
+    justify-content: space-between; /* Distribute items evenly */
+}
+
+.product-card {
+    width: calc(33.33% - 20px); /* Set width of each product card */
+    margin-bottom: 20px; /* Add spacing between product cards */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+.product-card img {
+    max-width: 100%; /* Set maximum width for product images */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.product-details {
+    padding: 10px;
+    background-color: #f5f5f5; /* Add background color for product details */
+    text-align: center;
+}
+
+.product-card {
+    position: relative; /* Ensure relative positioning for absolute positioning of button */
+}
+
+.add-to-cart-btn {
+    position: absolute;
+    bottom: -5px; /* Adjust this value to control the distance from the bottom */
+    left: 50%; /* Center the button horizontally */
+    transform: translateX(-50%); /* Center the button horizontally */
+    
+    display: block;
+    width: 80%; /* Adjust the width as needed */
+    padding: 10px;
+    background-color: darkblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #1e1e1e; /* Darken button color on hover */
+}
+
+.cart-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 999;
+}
+.section-4 {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping of items */
+    width: 100%;
+}
+
+.product-list {
+    display: inline-flex; /* Display items in a single row */
+}
+
+/* Hide scrollbar for WebKit-based browsers */
+.section-4::-webkit-scrollbar {
+    display: none;
+}
+
+.section-4 {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping of items */
+}
+
+.product-container {
+    display: inline-flex; /* Display items in a single row */
+    width: auto; /* Occupy full width */
+    max-width: 100%; /* Set maximum width to 100% */
+    padding: 0 20px; /* Add padding to the container */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    margin: 0; /* Remove any default margin */
+}
+
+.product-card {
+    flex: 0 0 auto; /* Allow items to shrink as needed */
+    margin-right: 20px; /* Add spacing between product cards */
+}
+
+/* Hide scrollbar for WebKit-based browsers */
+.section-4::-webkit-scrollbar {
+    display: none;
+}
+
+/* Adjustments for section-4 */
+.section-4 {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping of items */
+    width: 100%; /* Set width to 100% */
+    margin: 0 auto; /* Center the section horizontally */
+}
+.section-2 {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    z-index: 1; /* Ensure it's above other content */
+}
+
+.section-4 {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1; /* Ensure it's above other content */
+}
+
+.grocery-heading {
+    text-align: center;
+    margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.grocery-heading .heading {
+    font-size: 36px; /* Adjust font size as needed */
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+.grocery-heading .heading::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 10px;
+    left: 0;
+    z-index: -1;
+    background-color: black; /* Background color for the stroke */
+    border-radius: 10px; /* Adjust border radius as needed */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 50%, black 50%);
+    mask-image: linear-gradient(to bottom, transparent 50%, black 50%);
+}
+
+/* Keyframes for animation */
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Header content -->
+        {%include 'header.html'%}
+    </header>
+
+    <main>
+        
+        <div class="section-1">
+             
+            <div class="Banner">
+                <img src="/static/ChadStoreBanner.png" alt="GigaChad">
+                <div class="section-heading">
+                    <h1 class="heading">Categories:</h1>
+                </div>
+            </div >
+             
+            
+        
+            <section class="section-2">
+                <div class="category" style="background-image: url('https://imgs.search.brave.com/crv0n1nTChAH1j2PT4hWCuGovTOe5COX3bfsNvVG6kE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9paDEu/cmVkYnViYmxlLm5l/dC9pbWFnZS4zODk2/NTQzNjUxLjA1MDcv/c3NyY28sY2xhc3Np/Y190ZWUsZmxhdGxh/eSxkZW5pbV9oZWF0/aGVyLGZyb250X2Fs/dCxzcXVhcmVfcHJv/ZHVjdF9jbG9zZSw2/MDB4NjAwLmpwZw');">
+                    <a href="buttonSlider.html">
+                        <span class="category-name">Clothing</span>
+                    </a>
+                </div>
+                <div class="category" style="background-image: url('https://imgs.search.brave.com/crv0n1nTChAH1j2PT4hWCuGovTOe5COX3bfsNvVG6kE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9paDEu/cmVkYnViYmxlLm5l/dC9pbWFnZS4zODk2/NTQzNjUxLjA1MDcv/c3NyY28sY2xhc3Np/Y190ZWUsZmxhdGxh/eSxkZW5pbV9oZWF0/aGVyLGZyb250X2Fs/dCxzcXVhcmVfcHJv/ZHVjdF9jbG9zZSw2/MDB4NjAwLmpwZw');">
+                    <a href="buttonSlider.html">
+                        <span class="category-name">Footwear</span>
+                    </a>    
+                </div>
+                <div class="category" style="background-image: url('https://imgs.search.brave.com/crv0n1nTChAH1j2PT4hWCuGovTOe5COX3bfsNvVG6kE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9paDEu/cmVkYnViYmxlLm5l/dC9pbWFnZS4zODk2/NTQzNjUxLjA1MDcv/c3NyY28sY2xhc3Np/Y190ZWUsZmxhdGxh/eSxkZW5pbV9oZWF0/aGVyLGZyb250X2Fs/dCxzcXVhcmVfcHJv/ZHVjdF9jbG9zZSw2/MDB4NjAwLmpwZw');">
+                    <a href="buttonSlider.html">
+                        <span class="category-name">HandBag</span>
+                    </a>
+                </div>
+                <div class="category" style="background-image: url('https://imgs.search.brave.com/crv0n1nTChAH1j2PT4hWCuGovTOe5COX3bfsNvVG6kE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9paDEu/cmVkYnViYmxlLm5l/dC9pbWFnZS4zODk2/NTQzNjUxLjA1MDcv/c3NyY28sY2xhc3Np/Y190ZWUsZmxhdGxh/eSxkZW5pbV9oZWF0/aGVyLGZyb250X2Fs/dCxzcXVhcmVfcHJv/ZHVjdF9jbG9zZSw2/MDB4NjAwLmpwZw');">
+                    <a href="buttonSlider.html">
+                        <span class="category-name">Grocery</span>
+                    </a>
+                </div>
+                <div class="category" style="background-image: url('https://imgs.search.brave.com/crv0n1nTChAH1j2PT4hWCuGovTOe5COX3bfsNvVG6kE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9paDEu/cmVkYnViYmxlLm5l/dC9pbWFnZS4zODk2/NTQzNjUxLjA1MDcv/c3NyY28sY2xhc3Np/Y190ZWUsZmxhdGxh/eSxkZW5pbV9oZWF0/aGVyLGZyb250X2Fs/dCxzcXVhcmVfcHJv/ZHVjdF9jbG9zZSw2/MDB4NjAwLmpwZw');">
+                    <a href="buttonSlider.html">
+                        <span class="category-name">Footwear</span>
+                    </a>    
+                </div>
+                <div class="category" style="background-image: url('https://imgs.search.brave.com/crv0n1nTChAH1j2PT4hWCuGovTOe5COX3bfsNvVG6kE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9paDEu/cmVkYnViYmxlLm5l/dC9pbWFnZS4zODk2/NTQzNjUxLjA1MDcv/c3NyY28sY2xhc3Np/Y190ZWUsZmxhdGxh/eSxkZW5pbV9oZWF0/aGVyLGZyb250X2Fs/dCxzcXVhcmVfcHJv/ZHVjdF9jbG9zZSw2/MDB4NjAwLmpwZw');">
+                    <a href="buttonSlider.html">
+                        <span class="category-name">HandBag</span>
+                    </a>
+                </div>
+            </section>
+            
+            <div class="grocery-heading">
+                <h1 class="heading">Laptops</h1>
+            </div>
+            
+            <div class="section-4">
+                <div class="product-container">
+                    <div class="product-list">
+                        {% for product in products %}
+                        {% if product[4] == 6%}
+                        <div class="product-card">
+                            <img src="{{ url_for('static', filename=product[3]) }}" alt="{{ product[1] }}">
+                            <div class="product-details">
+                                <p class="product-card-title">{{ product[1] }}</p>
+                                <p class="product-qty">₹ {{ product[2] }}</p>
+                            </div>
+                            <button class="add-to-cart-btn" data-product-id="{{ product[0] }}">ADD TO CART</button>
+                        </div>
+                        {%endif%}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="grocery-heading">
+                <h1 class="heading">Fashion
+                </h1>
+            </div>
+            
+            <div class="section-4">
+                <div class="product-container">
+                    <div class="product-list">
+                        {% for product in products %}
+                        {% if product[4] == 7%}
+                        <div class="product-card">
+                            <img src="{{ url_for('static', filename=product[3]) }}" alt="{{ product[1] }}">
+                            <div class="product-details">
+                                <p class="product-card-title">{{ product[1] }}</p>
+                                <p class="product-qty">₹ {{ product[2] }}</p>
+                            </div>
+                            <button class="add-to-cart-btn" data-product-id="{{ product[0] }}">ADD TO CART</button>
+                        </div>
+                        {% endif%}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="grocery-heading">
+                <h1 class="heading">TV'S
+                </h1>
+            </div>
+            
+            <div class="section-4">
+                <div class="product-container">
+                    <div class="product-list">
+                        {% for product in products %}
+                        {% if product[4] == 8%}
+                        <div class="product-card">
+                            <img src="{{ url_for('static', filename=product[3]) }}" alt="{{ product[1] }}">
+                            <div class="product-details">
+                                <p class="product-card-title">{{ product[1] }}</p>
+                                <p class="product-qty">₹ {{ product[2] }}</p>
+                            </div>
+                            <button class="add-to-cart-btn" data-product-id="{{ product[0] }}">ADD TO CART</button>
+                        </div>
+                        {% endif%}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="grocery-heading">
+                <h1 class="heading">Watches
+                </h1>
+            </div>
+            
+            <div class="section-4">
+                <div class="product-container">
+                    <div class="product-list">
+                        {% for product in products %}
+                        {%if product[4] == 9%}
+                        <div class="product-card">
+                            <img src="{{ url_for('static', filename=product[3]) }}" alt="{{ product[1] }}">
+                            <div class="product-details">
+                                <p class="product-card-title">{{ product[1] }}</p>
+                                <p class="product-qty">₹ {{ product[2] }}</p>
+                            </div>
+                            <button class="add-to-cart-btn" data-product-id="{{ product[0] }}">ADD TO CART</button>
+                        </div>
+                        {%endif%}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="grocery-heading">
+                <h1 class="heading">Grocery</h1>
+            </div>
+            
+            <div class="section-4">
+                <div class="product-container">
+                    <div class="product-list">
+                        {% for product in products %}
+                       
+                        {% if product[4] == 3 %}
+                            <div class="product-card">
+                                <img src="{{ url_for('static', filename=product[3]) }}" alt="{{ product[1] }}">
+                                <div class="product-details">
+                                    <p class="product-card-title">{{ product[1] }}</p>
+                                    <p class="product-qty">₹ {{ product[2] }}</p>
+                                </div>
+                                <button class="add-to-cart-btn" data-product-id="{{ product[0] }}">ADD TO CART</button>
+                            </div>
+                        {%endif%}
+                        
+                    {%endfor%}
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Cart Notification Message -->
+            <div class="cart-notification" id="cartNotification">Item added to cart!</div>
+    
+            <script>
+                document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const productId = button.dataset.productId;
+                        addToCart(productId);
+                    });
+                });
+    
+                function addToCart(productId) {
+                    fetch('/add_to_cart', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ productId: productId })
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Failed to add product to cart');
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        console.log(data);
+                        showCartNotification();
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                }
+    
+                function showCartNotification() {
+                    const cartNotification = document.getElementById('cartNotification');
+                    cartNotification.style.opacity = '1';
+                    setTimeout(() => {
+                        cartNotification.style.opacity = '0';
+                    }, 2000);
+                }
+            </script>
+        </div>
+    
+            
+
+</main>
+</div>
+</body>
+</html>

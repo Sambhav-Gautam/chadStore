@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='search_style.css') }}" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .section-4 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product-row {
+            position: relative;
+            width: 200px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product-row:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-row img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-details {
+            padding: 15px;
+        }
+
+        .product-card-title {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .product-qty {
+            margin-top: 5px;
+            font-size: 16px;
+            color: #888;
+        }
+
+        .add-to-cart-btn {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            background-color: darkblue;
+            color: #fff;
+            border: none;
+            border-radius: 0 0 10px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: navy;
+        }
+
+        .cart-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    {% include 'header.html'%}            
+
+    <main>
+        <section class="section-4">
+            {% for product in result %}
+            <div class="product-row" style="border: 3px solid yellow;">
+                <img src="{{ url_for('static', filename=product[3]) }}" alt="{{ product[1] }}" >
+                <div class="product-details">
+                    <p class="product-card-title">{{ product[1] }}</p>
+                    <p class="product-qty">₹ {{ product[2] }}</p> <!-- Display price here -->
+                </div>
+                <button class="add-to-cart-btn" style="background-color: darkblue;" data-product-id="{{ product[0] }}">ADD TO CART</button>
+
+            </div>
+            {% endfor %}
+        </section>
+        
+
+        <!-- Cart Notification Message -->
+        <div class="cart-notification" id="cartNotification">Item added to cart!</div>
+
+        <script>
+            document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const productId = button.dataset.productId;
+                    addToCart(productId);
+                });
+            });
+
+            function addToCart(productId) {
+                fetch('/add_to_cart', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ productId: productId })
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to add product to cart');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    console.log(data);
+                    showCartNotification();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            }
+
+            function showCartNotification() {
+                const cartNotification = document.getElementById('cartNotification');
+                cartNotification.style.opacity = '1';
+                setTimeout(() => {
+                    cartNotification.style.opacity = '0';
+                }, 2000);
+            }
+        </script>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
